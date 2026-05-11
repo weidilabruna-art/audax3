@@ -169,7 +169,7 @@ Em até 5 minutos, um dos nossos especialistas vai entrar em contato direto par
     box-shadow: 0 0 0 1px #d32f2f !important;
   }
   .mask-error { display: none !important; }</style></div></div>
-<template id="cfef_logic_data_2f6a577" class="cfef_logic_data_js cfef-hidden" data-form-id="2f6a577">{"investimento":{"display_mode":"show","fire_action":"All","file_types":"png","logic_data":[{"cfef_logic_field_id":"valorinvestir","cfef_logic_field_is":"==","cfef_logic_compare_value":"At\u00e9 R$30.000","_id":"7c13e42"}]}}</template><div class="elementor-element elementor-element-2f6a577 elementor-button-align-stretch elementor-widget elementor-widget-form" data-id="2f6a577" data-element_type="widget" data-e-type="widget" data-settings="{" step_next_label":"pr\u00f3ximo","step_previous_label":"anterior","button_width":"100","step_type":"number_text","step_icon_shape":"circle"}"="" data-widget_type="form.default"><div class="elementor-widget-container"><form class="elementor-form" method="POST" action="https://app.forminit.com/f/cfm2kzxxre7" id="form_id_consultoria_gratuita" name="CADASTRO" aria-label="CADASTRO">
+<template id="cfef_logic_data_2f6a577" class="cfef_logic_data_js cfef-hidden" data-form-id="2f6a577">{"investimento":{"display_mode":"show","fire_action":"All","file_types":"png","logic_data":[{"cfef_logic_field_id":"valorinvestir","cfef_logic_field_is":"==","cfef_logic_compare_value":"At\u00e9 R$30.000","_id":"7c13e42"}]}}</template><div class="elementor-element elementor-element-2f6a577 elementor-button-align-stretch elementor-widget elementor-widget-form" data-id="2f6a577" data-element_type="widget" data-e-type="widget" data-settings="{" step_next_label":"pr\u00f3ximo","step_previous_label":"anterior","button_width":"100","step_type":"number_text","step_icon_shape":"circle"}"="" data-widget_type="form.default"><div class="elementor-widget-container"><form class="elementor-form" method="POST" action="https://app.forminit.com/f/cfm2kzxxre7" id="form_cadastro_custom" name="CADASTRO" aria-label="CADASTRO">
 <input type="hidden" name="post_id" value="3770">
 <input type="hidden" name="_redirect" value="https://wa.me/5521996768132">
 <input type="hidden" name="form_id" value="2f6a577">
@@ -310,9 +310,9 @@ utms							</label>
 
 
     <script>
-    // Remove o interceptor legado do Elementor que bloqueava o envio do formulário
+    // Script limpo - o Elementor JS não conhece o ID 'form_cadastro_custom', então não interfere
     document.addEventListener("DOMContentLoaded", function() {
-        const form = document.getElementById("form_id_consultoria_gratuita");
+        const form = document.getElementById("form_cadastro_custom");
         if (!form) return;
         
         // Captura os dados antes do envio para montar a URL do WhatsApp
