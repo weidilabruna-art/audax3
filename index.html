@@ -171,6 +171,7 @@ Em até 5 minutos, um dos nossos especialistas vai entrar em contato direto par
   .mask-error { display: none !important; }</style></div></div>
 <template id="cfef_logic_data_2f6a577" class="cfef_logic_data_js cfef-hidden" data-form-id="2f6a577">{"investimento":{"display_mode":"show","fire_action":"All","file_types":"png","logic_data":[{"cfef_logic_field_id":"valorinvestir","cfef_logic_field_is":"==","cfef_logic_compare_value":"At\u00e9 R$30.000","_id":"7c13e42"}]}}</template><div class="elementor-element elementor-element-2f6a577 elementor-button-align-stretch elementor-widget elementor-widget-form" data-id="2f6a577" data-element_type="widget" data-e-type="widget" data-settings="{" step_next_label":"pr\u00f3ximo","step_previous_label":"anterior","button_width":"100","step_type":"number_text","step_icon_shape":"circle"}"="" data-widget_type="form.default"><div class="elementor-widget-container"><form class="elementor-form" method="POST" action="https://app.forminit.com/f/cfm2kzxxre7" id="form_id_consultoria_gratuita" name="CADASTRO" aria-label="CADASTRO">
 <input type="hidden" name="post_id" value="3770">
+<input type="hidden" name="_redirect" value="https://wa.me/5521996768132">
 <input type="hidden" name="form_id" value="2f6a577">
 <input type="hidden" name="referer_title" value="NOVA LANDING - Inovou"><input type="hidden" name="queried_id" value="3770"><div class="ele-extensions-hide-form elementor-form-fields-wrapper elementor-labels-above"><div class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-name elementor-col-100 elementor-field-required">
 <label for="form-field-name" class="elementor-field-label">
@@ -307,59 +308,29 @@ utms							</label>
 
 
 
+
     <script>
+    // Remove o interceptor legado do Elementor que bloqueava o envio do formulário
     document.addEventListener("DOMContentLoaded", function() {
         const form = document.getElementById("form_id_consultoria_gratuita");
         if (!form) return;
-
-        form.addEventListener("submit", function(e) {
-            // Se o Forminit já estiver configurado para redirecionar no painel, 
-            // você pode remover este script. Mas ele garante o funcionamento sem PHP.
-            e.preventDefault();
+        
+        // Captura os dados antes do envio para montar a URL do WhatsApp
+        form.addEventListener("submit", function() {
+            const nome = form.querySelector('[name="form_fields[name]"]')?.value || "";
+            const clinica = form.querySelector('[name="form_fields[field_d4efab4]"]')?.value || "";
+            const tel = form.querySelector('[name="form_fields[field_40939c2]"]')?.value || "";
             
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const originalText = submitBtn ? submitBtn.innerHTML : "Enviar";
-            if (submitBtn) {
-                submitBtn.disabled = true;
-                submitBtn.innerHTML = "Enviando...";
+            const msg = encodeURIComponent(
+                `Olá! Acabei de preencher o formulário no site.\n\n*Nome:* ${nome}\n*Clínica:* ${clinica}\n*Telefone:* ${tel}`
+            );
+            
+            // Atualiza dinamicamente o campo _redirect com a URL do WhatsApp montada com os dados
+            const redirectInput = form.querySelector('input[name="_redirect"]');
+            if (redirectInput) {
+                redirectInput.value = `https://wa.me/5521996768132?text=${msg}`;
             }
-
-            const formData = new FormData(form);
-            
-            fetch(form.action, {
-                method: "POST",
-                body: formData,
-                headers: {
-                    "Accept": "application/json"
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    // Sucesso! Redireciona para o WhatsApp
-                    // NÚMERO ATUALIZADO:
-                    const whatsappNumber = "5521996768132"; 
-                    const nome = formData.get("form_fields[name]") || "";
-                    const clinica = formData.get("form_fields[field_d4efab4]") || "";
-                    
-                    const message = encodeURIComponent(`Olá! Acabei de preencher o formulário no site.\n\n*Nome:* ${nome}\n*Clínica:* ${clinica}`);
-                    
-                    window.location.href = `https://wa.me/${whatsappNumber}?text=${message}`;
-                } else {
-                    alert("Ocorreu um erro ao enviar. Por favor, verifique os dados e tente novamente.");
-                    if (submitBtn) {
-                        submitBtn.disabled = false;
-                        submitBtn.innerHTML = originalText;
-                    }
-                }
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                alert("Erro de conexão. Tente novamente mais tarde.");
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = originalText;
-                }
-            });
+            // Deixa o submit nativo acontecer (sem preventDefault)
         });
     });
     </script>
