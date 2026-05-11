@@ -310,28 +310,49 @@ utms							</label>
 
 
     <script>
-    // Script limpo - o Elementor JS não conhece o ID 'form_cadastro_custom', então não interfere
-    document.addEventListener("DOMContentLoaded", function() {
-        const form = document.getElementById("form_cadastro_custom");
-        if (!form) return;
-        
-        // Captura os dados antes do envio para montar a URL do WhatsApp
-        form.addEventListener("submit", function() {
-            const nome = form.querySelector('[name="form_fields[name]"]')?.value || "";
-            const clinica = form.querySelector('[name="form_fields[field_d4efab4]"]')?.value || "";
-            const tel = form.querySelector('[name="form_fields[field_40939c2]"]')?.value || "";
-            
-            const msg = encodeURIComponent(
-                `Olá! Acabei de preencher o formulário no site.\n\n*Nome:* ${nome}\n*Clínica:* ${clinica}\n*Telefone:* ${tel}`
-            );
-            
-            // Atualiza dinamicamente o campo _redirect com a URL do WhatsApp montada com os dados
-            const redirectInput = form.querySelector('input[name="_redirect"]');
-            if (redirectInput) {
-                redirectInput.value = `https://wa.me/5521996768132?text=${msg}`;
-            }
-            // Deixa o submit nativo acontecer (sem preventDefault)
-        });
-    });
+    (function() {
+        // ============================================================
+        // LÓGICA DE ENVIO PRÓPRIA - Completamente independente do Elementor
+        // O FORM_ID no JS do Elementor foi desativado para não interferir
+        // ============================================================
+        function initForm() {
+            var form = document.getElementById('form_cadastro_custom');
+            if (!form) return;
+
+            // Fase de CAPTURA (true) + stopImmediatePropagation = mata qualquer outro handler
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+
+                var nome   = (form.querySelector('[name="form_fields[name]"]')       || {}).value || '';
+                var clinica= (form.querySelector('[name="form_fields[field_d4efab4]"]') || {}).value || '';
+                var tel    = (form.querySelector('[name="form_fields[field_40939c2]"]') || {}).value || '';
+
+                var msg = encodeURIComponent(
+                    'Olá! Acabei de preencher o formulário no site.\n\n' +
+                    '*Nome:* ' + nome + '\n' +
+                    '*Clínica:* ' + clinica + '\n' +
+                    '*Telefone:* ' + tel
+                );
+
+                // Atualiza o campo _redirect antes de enviar para o Forminit
+                var redir = form.querySelector('[name="_redirect"]');
+                if (redir) {
+                    redir.value = 'https://wa.me/5521996768132?text=' + msg;
+                }
+
+                // Envia nativamente para o Forminit (action="https://app.forminit.com/f/cfm2kzxxre7")
+                form.submit();
+
+            }, true); // <-- true = captura (roda ANTES de qualquer handler de bolha do Elementor/GTM)
+        }
+
+        // Roda imediatamente se o DOM já estiver pronto, ou aguarda
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initForm);
+        } else {
+            initForm();
+        }
+    })();
     </script>
 </body></html><!-- Page optimized by LiteSpeed Cache @2026-05-11 17:49:14 --><!-- Page cached by LiteSpeed Cache 7.8.1 on 2026-05-11 17:49:13 --><!-- QUIC.cloud CCSS loaded ✅ /ccss/c889f3a1b230ffa2961d79a8fc1dcf8e.css -->
