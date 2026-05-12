@@ -4693,6 +4693,18 @@
               </b></h2>
           </div>
         </div>
+        <style>
+          .elementor-swiper-button {
+            z-index: 100 !important;
+            cursor: pointer !important;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+          }
+          .swiper-pagination {
+            z-index: 100 !important;
+          }
+        </style>
         <div
           class="elementor-element elementor-element-00c9276 elementor-arrows-position-outside elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-hidden-mobile elementor-pagination-position-outside elementor-widget elementor-widget-image-carousel"
           data-id="00c9276" data-element_type="widget" data-e-type="widget" data-settings="{"
@@ -5413,10 +5425,12 @@
       }
 
       // Inicializa os carrosséis Swiper
-      new Swiper('.elementor-element-00c9276 .swiper', {
+      var desktopSwiper = new Swiper('.elementor-element-00c9276 .swiper', {
         slidesPerView: 1,
         loop: true,
-        autoplay: { delay: 5000 },
+        autoplay: { delay: 3000, disableOnInteraction: false },
+        observer: true,
+        observeParents: true,
         navigation: {
           nextEl: '.elementor-element-00c9276 .elementor-swiper-button-next',
           prevEl: '.elementor-element-00c9276 .elementor-swiper-button-prev',
@@ -5424,10 +5438,12 @@
         pagination: { el: '.elementor-element-00c9276 .swiper-pagination', clickable: true },
       });
 
-      new Swiper('.elementor-element-e0a2667 .swiper', {
+      var mobileSwiper = new Swiper('.elementor-element-e0a2667 .swiper', {
         slidesPerView: 1,
         loop: true,
-        autoplay: { delay: 5000 },
+        autoplay: { delay: 3000, disableOnInteraction: false },
+        observer: true,
+        observeParents: true,
         navigation: {
           nextEl: '.elementor-element-e0a2667 .elementor-swiper-button-next',
           prevEl: '.elementor-element-e0a2667 .elementor-swiper-button-prev',
