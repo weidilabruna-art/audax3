@@ -4283,7 +4283,7 @@
                           </select>
                         </div>
                       </div>
-                      <div
+                      <div id="field-investimento-container" style="display: none;"
                         class="elementor-field-type-radio elementor-field-group elementor-column elementor-field-group-investimento elementor-col-100">
                         <label for="form-field-investimento" class="elementor-field-label">
                           Você investiria R$3.500,00 por mês em marketing? </label>
@@ -5358,34 +5358,51 @@
           }
           var tel = '+' + digits;
 
-          if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Enviando...'; }
+        if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Enviando...'; }
 
-          // Envia usando o SDK do Forminit com payload JSON (formato fi-*)
-          forminit.submit('cfm2kzxxre7', {
-            blocks: [
-              { type: 'sender', properties: { fullName: nome, phone: tel, company: clinica } },
-              { type: 'text', name: 'especialidade', value: espec },
-              { type: 'text', name: 'instagram', value: insta },
-              { type: 'text', name: 'faturamento', value: fat },
-              { type: 'text', name: 'investimento', value: invest }
-            ]
-          }).then(function (result) {
-            if (result.error) {
-              alert('Erro ao enviar: ' + result.error.message);
-              if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'CADASTRAR'; }
-              return;
-            }
-            // Sucesso! Redireciona para o link do WhatsApp via Redfy
-            window.location.href = 'https://redfy.com.br/wpp/audaxcomapany';
-          }).catch(function (err) {
-            alert('Erro de conexão. Tente novamente.');
+        // Envia usando o SDK do Forminit com payload JSON (formato fi-*)
+        forminit.submit('cfm2kzxxre7', {
+          blocks: [
+            { type: 'sender', properties: { fullName: nome, phone: tel, company: clinica } },
+            { type: 'text', name: 'especialidade', value: espec },
+            { type: 'text', name: 'instagram', value: insta },
+            { type: 'text', name: 'faturamento', value: fat },
+            { type: 'text', name: 'investimento', value: invest }
+          ]
+        }).then(function (result) {
+          if (result.error) {
+            alert('Erro ao enviar: ' + result.error.message);
             if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'CADASTRAR'; }
-          });
+            return;
+          }
+          // Sucesso! Redireciona para o link do WhatsApp via Redfy
+          window.location.href = 'https://redfy.com.br/wpp/audaxcomapany';
+        }).catch(function (err) {
+          alert('Erro de conexão. Tente novamente.');
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'CADASTRAR'; }
+        });
 
-        }, true);
+      }, true);
+
+      // Lógica de visibilidade condicional para o campo de investimento
+      var selectFaturamento = form.querySelector('[name="form_fields[valorinvestir]"]');
+      var containerInvestimento = document.getElementById('field-investimento-container');
+
+      if (selectFaturamento && containerInvestimento) {
+        selectFaturamento.addEventListener('change', function () {
+          if (this.value === 'Até R$30.000') {
+            containerInvestimento.style.display = 'block';
+          } else {
+            containerInvestimento.style.display = 'none';
+            // Limpa a seleção se for escondido
+            var radios = containerInvestimento.querySelectorAll('input[type="radio"]');
+            radios.forEach(function (r) { r.checked = false; });
+          }
+        });
       }
+    }
 
-      if (document.readyState === 'loading') {
+    if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initForm);
       } else {
         initForm();
