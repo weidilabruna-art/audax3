@@ -4524,68 +4524,75 @@
           </div>
         </div>
 
-        <div class="logo-container-flex">
+        <div class="logo-container-floating">
           <div
-            class="elementor-element elementor-element-b2a7d1c elementor-widget__width-initial scroll-left elementor-widget-mobile__width-initial elementor-widget elementor-widget-image"
-            data-id="b2a7d1c" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+            class="elementor-element elementor-element-b2a7d1c elementor-widget__width-initial scroll-left elementor-widget-mobile__width-initial elementor-absolute elementor-widget elementor-widget-image"
+            data-id="b2a7d1c" data-element_type="widget" data-e-type="widget" data-settings='{"_position":"absolute"}' data-widget_type="image.default">
             <div class="elementor-widget-container">
-              <img data-lazyloaded="1" src="images/p1.png.webp" loading="lazy" decoding="async" width="200" data-src="images/p1.png.webp" class="attachment-full size-full" alt="">
+              <img data-lazyloaded="1" src="images/p1.png.webp" loading="lazy" decoding="async" width="400" data-src="images/p1.png.webp" class="attachment-full size-full" alt="Processo Comercial">
             </div>
           </div>
           <div
-            class="elementor-element elementor-element-06febcf elementor-widget__width-initial scroll-right elementor-widget-mobile__width-initial elementor-widget elementor-widget-image"
-            data-id="06febcf" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+            class="elementor-element elementor-element-06febcf elementor-widget__width-initial scroll-right elementor-widget-mobile__width-initial elementor-absolute elementor-widget elementor-widget-image"
+            data-id="06febcf" data-element_type="widget" data-e-type="widget" data-settings='{"_position":"absolute"}' data-widget_type="image.default">
             <div class="elementor-widget-container">
-              <img data-lazyloaded="1" src="images/g.png.webp" loading="lazy" decoding="async" width="200" data-src="images/g.png.webp" class="attachment-full size-full" alt="">
+              <img data-lazyloaded="1" src="images/g.png.webp" loading="lazy" decoding="async" width="400" data-src="images/g.png.webp" class="attachment-full size-full" alt="Inteligência Artificial">
             </div>
           </div>
           <div
             class="elementor-element elementor-element-925cd54 elementor-widget__width-initial logo-move elementor-widget-mobile__width-inherit elementor-widget elementor-widget-image"
             data-id="925cd54" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
             <div class="elementor-widget-container">
-              <img data-lazyloaded="1" src="images/AUDAX.png" fetchpriority="high" decoding="async" width="250" data-src="images/AUDAX.png" class="attachment-full size-full" alt="Audax Company">
+              <img data-lazyloaded="1" src="images/AUDAX.png" fetchpriority="high" decoding="async" width="600" data-src="images/AUDAX.png" class="attachment-full size-full" alt="Audax Company">
             </div>
           </div>
           <div
-            class="elementor-element elementor-element-894f89a elementor-widget__width-initial scroll-left elementor-widget-mobile__width-initial elementor-widget elementor-widget-image"
-            data-id="894f89a" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+            class="elementor-element elementor-element-894f89a elementor-widget__width-initial scroll-left elementor-widget-mobile__width-initial elementor-absolute elementor-widget elementor-widget-image"
+            data-id="894f89a" data-element_type="widget" data-e-type="widget" data-settings='{"_position":"absolute"}' data-widget_type="image.default">
             <div class="elementor-widget-container">
-              <img data-lazyloaded="1" src="images/p2-1.png.webp" loading="lazy" decoding="async" width="200" data-src="images/p2-1.png.webp" class="attachment-full size-full" alt="">
+              <img data-lazyloaded="1" src="images/p2-1.png.webp" loading="lazy" decoding="async" width="400" data-src="images/p2-1.png.webp" class="attachment-full size-full" alt="Geração de Demanda">
             </div>
           </div>
           <div
-            class="elementor-element elementor-element-2ad575d elementor-widget__width-initial scroll-right elementor-widget-mobile__width-initial elementor-widget elementor-widget-image"
-            data-id="2ad575d" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+            class="elementor-element elementor-element-2ad575d elementor-widget__width-initial scroll-right elementor-widget-mobile__width-initial elementor-absolute elementor-widget elementor-widget-image"
+            data-id="2ad575d" data-element_type="widget" data-e-type="widget" data-settings='{"_position":"absolute"}' data-widget_type="image.default">
             <div class="elementor-widget-container">
-              <img data-lazyloaded="1" src="images/A.png.webp" loading="lazy" decoding="async" width="200" data-src="images/A.png.webp" class="attachment-full size-full" alt="">
+              <img data-lazyloaded="1" src="images/A.png.webp" loading="lazy" decoding="async" width="400" data-src="images/A.png.webp" class="attachment-full size-full" alt="Posicionamento">
             </div>
           </div>
         </div>
         <style>
-          .logo-container-flex {
+          .logo-container-floating {
+            position: relative;
+            width: 100%;
+            height: 500px;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin: 40px 0;
+            margin: 60px 0;
           }
-          .logo-container-flex .elementor-widget-image {
-            position: relative !important;
-            top: auto !important;
-            left: auto !important;
-            right: auto !important;
-            bottom: auto !important;
-            width: auto !important;
-            max-width: 150px;
+          .logo-container-floating .logo-move {
+            width: 500px;
+            z-index: 5;
           }
-          .logo-container-flex .logo-move {
-            max-width: 200px;
+          .logo-container-floating .elementor-absolute {
+            position: absolute !important;
+            width: 350px !important;
           }
+          /* Posições simulando a Imagem 2 */
+          .logo-container-floating .elementor-element-b2a7d1c { top: 0%; left: 5%; } /* Processo Comercial */
+          .logo-container-floating .elementor-element-06febcf { top: 5%; right: 5%; } /* Inteligência Artificial */
+          .logo-container-floating .elementor-element-894f89a { bottom: 0%; right: 10%; } /* Geração de Demanda */
+          .logo-container-floating .elementor-element-2ad575d { bottom: 5%; left: 10%; } /* Posicionamento */
+
           @media (max-width: 767px) {
-            .logo-container-flex { gap: 10px; }
-            .logo-container-flex .elementor-widget-image { max-width: 80px; }
-            .logo-container-flex .logo-move { max-width: 120px; }
+            .logo-container-floating { height: 400px; }
+            .logo-container-floating .logo-move { width: 250px; }
+            .logo-container-floating .elementor-absolute { width: 150px !important; }
+            .logo-container-floating .elementor-element-b2a7d1c { top: -10%; left: 0%; }
+            .logo-container-floating .elementor-element-06febcf { top: -5%; right: -5%; }
+            .logo-container-floating .elementor-element-894f89a { bottom: -10%; right: 0%; }
+            .logo-container-floating .elementor-element-2ad575d { bottom: -5%; left: -5%; }
           }
         </style>
         <div class="elementor-element elementor-element-9a72466 e-con-full e-flex e-con e-child" data-id="9a72466"
@@ -4973,17 +4980,11 @@
             class="elementor-element elementor-element-b8f383a elementor-widget__width-initial elementor-widget-mobile__width-inherit scroll-right elementor-widget elementor-widget-text-editor"
             data-id="b8f383a" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
             <div class="elementor-widget-container">
-              <p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">A Audax Company não é
-                agência. É a assessoria estratégica especializada em crescimento de clínicas e especialistas da saúde,
-                estética e bem-estar.</p>
-              <p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Fundada em 2022 por Caio
-                Mazza e fortalecida com a entrada de Angelo Mazza como COO, a Inovou se consolidou no nicho com o método
-                <strong>Clínicas do Futuro™, </strong>um ecossistema completo que integra estratégia, marketing,
-                tecnologia e processo comercial pra fazer clínicas venderem mais, com estrutura e previsibilidade.
-              </p>
-              <p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Ajudamos profissionais
-                que transformam vidas a venderem mais, pra que mais pessoas tenham acesso a saúde, beleza e autoestima.
-              </p>
+              <p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">A <strong>Audax Company</strong> nasceu através dos resultados que seus fundadores, <strong>Rubens Godoy</strong> e <strong>Weidila Bruna</strong>, construíram no digital nos últimos anos.</p>
+              <p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Mesmo com apenas <strong>21 anos</strong>, o casal já faturou mais de <strong>R$ 5 milhões</strong> na internet, validando na prática estratégias de marketing, vendas e posicionamento digital.</p>
+              <p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Com isso, empresários e empresas começaram a procurá-los em busca da mesma estrutura e crescimento que enxergavam nos seus resultados.</p>
+              <p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Foi dessa demanda que surgiu a <strong>Audax</strong>: uma assessoria criada para gerar demanda qualificada e estruturar operações comerciais preparadas para crescer com <strong>previsibilidade</strong>.</p>
+              <p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Hoje, a Audax conta com mais de <strong>20 empresas ativas</strong>, unindo <strong>tráfego pago</strong>, <strong>marketing</strong> e <strong>soluções comerciais</strong> para gerar mais <strong>lucro</strong>, <strong>previsibilidade</strong> e <strong>escala</strong>.</p>
             </div>
           </div>
           <div
