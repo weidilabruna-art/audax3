@@ -4565,35 +4565,46 @@
           .logo-container-floating {
             position: relative;
             width: 100%;
-            height: 550px;
+            height: 500px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0;
           }
           .logo-container-floating .logo-move {
-            width: 480px;
+            width: 500px;
             z-index: 5;
           }
           .logo-container-floating .elementor-absolute {
             position: absolute !important;
             width: 380px !important;
           }
-          /* Posições Desktop - Seguindo a lógica da imagem de referência */
-          .logo-container-floating .elementor-element-06febcf { top: 10%; left: 10%; }   /* IA - Top Left */
-          .logo-container-floating .elementor-element-2ad575d { top: 12%; right: 10%; }  /* POSIC. - Top Right */
-          .logo-container-floating .elementor-element-b2a7d1c { bottom: 10%; left: 10%; } /* COMERCIAL - Bottom Left */
-          .logo-container-floating .elementor-element-894f89a { bottom: 12%; right: 10%; } /* DEMANDA - Bottom Right */
+          /* Posições Desktop - Mais afastadas para não cobrir o logo */
+          .logo-container-floating .elementor-element-06febcf { top: 0%; left: 5%; }    /* IA */
+          .logo-container-floating .elementor-element-2ad575d { top: 5%; right: 5%; }   /* POSIC. */
+          .logo-container-floating .elementor-element-b2a7d1c { bottom: 0%; left: 5%; } /* COMERCIAL */
+          .logo-container-floating .elementor-element-894f89a { bottom: 5%; right: 5%; } /* DEMANDA */
 
           @media (max-width: 767px) {
-            .logo-container-floating { height: 320px; }
-            .logo-container-floating .logo-move { width: 260px; }
-            .logo-container-floating .elementor-absolute { width: 170px !important; }
-            /* Posições Mobile - Ajustadas para "abraçar" o logo como no exemplo */
-            .logo-container-floating .elementor-element-06febcf { top: 15%; left: 0%; }
-            .logo-container-floating .elementor-element-2ad575d { top: 15%; right: 0%; }
-            .logo-container-floating .elementor-element-b2a7d1c { bottom: 15%; left: 0%; }
-            .logo-container-floating .elementor-element-894f89a { bottom: 15%; right: 0%; }
+            .logo-container-floating { height: 350px; }
+            .logo-container-floating .logo-move { width: 280px; }
+            .logo-container-floating .elementor-absolute { width: 180px !important; }
+            /* Posições Mobile - Mais afastadas do centro */
+            .logo-container-floating .elementor-element-06febcf { top: 5%; left: 0%; }
+            .logo-container-floating .elementor-element-2ad575d { top: 10%; right: 0%; }
+            .logo-container-floating .elementor-element-b2a7d1c { bottom: 5%; left: 0%; }
+            .logo-container-floating .elementor-element-894f89a { bottom: 10%; right: 0%; }
+
+            /* Ajuste da barra preta conforme Imagem 3 */
+            .elementor-element-a22994e {
+              height: 50px !important;
+              padding: 0 !important;
+              margin-top: 20px !important;
+            }
+            .elementor-element-a22994e .elementor-heading-title {
+              font-size: 14px !important;
+              line-height: 50px !important;
+            }
           }
         </style>
         <div class="elementor-element elementor-element-9a72466 e-con-full e-flex e-con e-child" data-id="9a72466"
