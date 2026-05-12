@@ -4552,7 +4552,7 @@
             </div>
           </div>
         </div>
-        <style>
+       <style>
   .logo-container-floating {
     position: relative;
     width: 100%;
@@ -4566,25 +4566,32 @@
     width: 500px;
     z-index: 5;
   }
-  .logo-container-floating .elementor-absolute {
+  .logo-container-floating .elementor-element-06febcf,
+  .logo-container-floating .elementor-element-2ad575d,
+  .logo-container-floating .elementor-element-b2a7d1c,
+  .logo-container-floating .elementor-element-894f89a {
     position: absolute !important;
     width: 200px !important;
   }
 
-  /* Posições Desktop - Próximas ao logo, nos 4 cantos */
-  .logo-container-floating .elementor-element-06febcf { top: 5%; left: 20%; }
-  .logo-container-floating .elementor-element-2ad575d { top: 5%; right: 20%; }
-  .logo-container-floating .elementor-element-b2a7d1c { bottom: 5%; left: 20%; }
-  .logo-container-floating .elementor-element-894f89a { bottom: 5%; right: 20%; }
+  /* Posições Desktop */
+  .logo-container-floating .elementor-element-06febcf { top: 5%;    left: 18%;  }
+  .logo-container-floating .elementor-element-2ad575d { top: 5%;    right: 18%; }
+  .logo-container-floating .elementor-element-b2a7d1c { bottom: 5%; left: 18%;  }
+  .logo-container-floating .elementor-element-894f89a { bottom: 5%; right: 18%; }
 
   @media (max-width: 767px) {
-    .logo-container-floating { height: 380px; margin: 0; }
+    .logo-container-floating { height: 380px; }
     .logo-container-floating .logo-move { width: 200px; }
-    .logo-container-floating .elementor-absolute { width: 130px !important; }
-
-    .logo-container-floating .elementor-element-06febcf { top: 5%; left: 2%; }
-    .logo-container-floating .elementor-element-2ad575d { top: 5%; right: 2%; }
-    .logo-container-floating .elementor-element-b2a7d1c { bottom: 5%; left: 2%; }
+    .logo-container-floating .elementor-element-06febcf,
+    .logo-container-floating .elementor-element-2ad575d,
+    .logo-container-floating .elementor-element-b2a7d1c,
+    .logo-container-floating .elementor-element-894f89a {
+      width: 130px !important;
+    }
+    .logo-container-floating .elementor-element-06febcf { top: 5%;    left: 2%;  }
+    .logo-container-floating .elementor-element-2ad575d { top: 5%;    right: 2%; }
+    .logo-container-floating .elementor-element-b2a7d1c { bottom: 5%; left: 2%;  }
     .logo-container-floating .elementor-element-894f89a { bottom: 5%; right: 2%; }
   }
 </style>
