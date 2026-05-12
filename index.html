@@ -24,6 +24,11 @@
   <script type="application/ld+json"
     class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/audaxcompany.rubensgodoy.com.br\/","url":"https:\/\/audaxcompany.rubensgodoy.com.br\/","name":"Audax Company","isPartOf":{"@id":"https:\/\/audaxcompany.rubensgodoy.com.br\/#website"},"about":{"@id":"https:\/\/audaxcompany.rubensgodoy.com.br\/#organization"},"primaryImageOfPage":{"@id":"https:\/\/audaxcompany.rubensgodoy.com.br\/#primaryimage"},"image":{"@id":"https:\/\/audaxcompany.rubensgodoy.com.br\/#primaryimage"},"thumbnailUrl":"images/AUDAX.png","datePublished":"2026-04-24T15:12:58+00:00","dateModified":"2026-05-11T13:35:00+00:00","breadcrumb":{"@id":"https:\/\/audaxcompany.rubensgodoy.com.br\/#breadcrumb"},"inLanguage":"pt-BR","potentialAction":[{"@type":"ReadAction","target":["https:\/\/audaxcompany.rubensgodoy.com.br\/"]}]},{"@type":"ImageObject","inLanguage":"pt-BR","@id":"https:\/\/audaxcompany.rubensgodoy.com.br\/#primaryimage","url":"images/AUDAX.png","contentUrl":"images/AUDAX.png","width":1280,"height":458},{"@type":"BreadcrumbList","@id":"https:\/\/audaxcompany.rubensgodoy.com.br\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Início"}]},{"@type":"WebSite","@id":"https:\/\/audaxcompany.rubensgodoy.com.br\/#website","url":"https:\/\/audaxcompany.rubensgodoy.com.br\/","name":"Audax Company","description":"Audax Company","publisher":{"@id":"https:\/\/audaxcompany.rubensgodoy.com.br\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/audaxcompany.rubensgodoy.com.br\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"pt-BR"},{"@type":"Organization","@id":"https:\/\/audaxcompany.rubensgodoy.com.br\/#organization","name":"Audax Company","url":"https:\/\/audaxcompany.rubensgodoy.com.br\/","logo":{"@type":"ImageObject","inLanguage":"pt-BR","@id":"https:\/\/audaxcompany.rubensgodoy.com.br\/#\/schema\/logo\/image\/","url":"images/LOGO-PRETA.png","contentUrl":"images/LOGO-PRETA.png","width":621,"height":135,"caption":"Audax Company"},"image":{"@id":"https:\/\/audaxcompany.rubensgodoy.com.br\/#\/schema\/logo\/image\/"},"sameAs":["https:\/\/www.instagram.com\/audax.company\/"]}]}</script>
 
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
   <style id="wp-img-auto-sizes-contain-inline-css">
     img:is([sizes=auto i], [sizes^="auto," i]) {
       contain-intrinsic-size: 3000px 1500px
@@ -4213,15 +4218,23 @@
                       <div
                         class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-name elementor-col-100 elementor-field-required">
                         <label for="form-field-name" class="elementor-field-label">
-                          Nome </label>
+                          Seu nome </label>
                         <input size="1" type="text" name="form_fields[name]" id="form-field-name"
                           class="elementor-field elementor-size-lg  elementor-field-textual"
                           placeholder="Qual é o seu nome e sobrenome?" required="required">
                       </div>
                       <div
+                        class="elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-100 elementor-field-required">
+                        <label for="form-field-email" class="elementor-field-label">
+                          Seu melhor e-mail </label>
+                        <input size="1" type="email" name="form_fields[email]" id="form-field-email"
+                          class="elementor-field elementor-size-lg  elementor-field-textual"
+                          placeholder="seu@email.com" required="required">
+                      </div>
+                      <div
                         class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-field_d4efab4 elementor-col-100 elementor-field-required">
                         <label for="form-field-field_d4efab4" class="elementor-field-label">
-                          Nome da Clínica </label>
+                          Nome da empresa </label>
                         <input size="1" type="text" name="form_fields[field_d4efab4]" id="form-field-field_d4efab4"
                           class="elementor-field elementor-size-lg  elementor-field-textual"
                           placeholder="Qual o nome da sua empresa?" required="required">
@@ -4237,7 +4250,7 @@
                       <div
                         class="elementor-field-type-select elementor-field-group elementor-column elementor-field-group-field_c715690 elementor-col-100 elementor-field-required">
                         <label for="form-field-field_c715690" class="elementor-field-label">
-                          Qual a especialidade? </label>
+                          Em qual seguimento sua empresa atua? </label>
                         <div class="elementor-field elementor-select-wrapper remove-before ">
                           <div class="select-caret-down-wrapper">
                             <i aria-hidden="true" class="eicon-caret-down"></i>
@@ -4245,21 +4258,21 @@
                           <select name="form_fields[field_c715690]" id="form-field-field_c715690"
                             class="elementor-field-textual elementor-size-lg" required="required">
                             <option value="">Selecione</option>
-                            <option value="Médico(a)">Médico(a)</option>
-                            <option value="Odontologia">Odontologia</option>
-                            <option value="Estética">Estética</option>
+                            <option value="Serviços / Consultoria">Serviços / Consultoria</option>
+                            <option value="Medicina / Saúde / Estética">Medicina / Saúde / Estética</option>
+                            <option value="Infoproduto / Mentoria">Infoproduto / Mentoria</option>
+                            <option value="Negócio Local / Franquia">Negócio Local / Franquia</option>
+                            <option value="E-commerce / Loja Online">E-commerce / Loja Online</option>
+                            <option value="SaaS / Tecnologia">SaaS / Tecnologia</option>
+                            <option value="Indústria">Indústria</option>
+                            <option value="Educação">Educação</option>
+                            <option value="Turismo">Turismo</option>
+                            <option value="Agência">Agência</option>
                             <option value="Outro">Outro</option>
                           </select>
                         </div>
                       </div>
-                      <div
-                        class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-instagram elementor-col-100">
-                        <label for="form-field-instagram" class="elementor-field-label">
-                          Qual seu instagram? </label>
-                        <input size="1" type="text" name="form_fields[instagram]" id="form-field-instagram"
-                          class="elementor-field elementor-size-lg  elementor-field-textual"
-                          placeholder="@ do seu instagram">
-                      </div>
+
                       <div
                         class="elementor-field-type-select elementor-field-group elementor-column elementor-field-group-valorinvestir elementor-col-100 elementor-field-required">
                         <label for="form-field-valorinvestir" class="elementor-field-label">
@@ -5341,10 +5354,10 @@
 
           // Lê os valores dos campos visuais existentes
           var nome = (form.querySelector('[name="form_fields[name]"]') || {}).value || '';
+          var email = (form.querySelector('[name="form_fields[email]"]') || {}).value || '';
           var clinica = (form.querySelector('[name="form_fields[field_d4efab4]"]') || {}).value || '';
           var telRaw = (form.querySelector('[name="form_fields[field_40939c2]"]') || {}).value || '';
           var espec = (form.querySelector('[name="form_fields[field_c715690]"]') || {}).value || '';
-          var insta = (form.querySelector('[name="form_fields[instagram]"]') || {}).value || '';
           var fat = (form.querySelector('[name="form_fields[valorinvestir]"]') || {}).value || '';
           var invest = (form.querySelector('[name="form_fields[investimento]"]:checked') || {}).value || '';
 
@@ -5362,9 +5375,8 @@
         // Envia usando o SDK do Forminit com payload JSON (formato fi-*)
         forminit.submit('cfm2kzxxre7', {
           blocks: [
-            { type: 'sender', properties: { fullName: nome, phone: tel, company: clinica } },
-            { type: 'text', name: 'especialidade', value: espec },
-            { type: 'text', name: 'instagram', value: insta },
+            { type: 'sender', properties: { fullName: nome, phone: tel, company: clinica, email: email } },
+            { type: 'text', name: 'seguimento', value: espec },
             { type: 'text', name: 'faturamento', value: fat },
             { type: 'text', name: 'investimento', value: invest }
           ]
@@ -5399,6 +5411,29 @@
           }
         });
       }
+
+      // Inicializa os carrosséis Swiper
+      new Swiper('.elementor-element-00c9276 .swiper', {
+        slidesPerView: 1,
+        loop: true,
+        autoplay: { delay: 5000 },
+        navigation: {
+          nextEl: '.elementor-element-00c9276 .elementor-swiper-button-next',
+          prevEl: '.elementor-element-00c9276 .elementor-swiper-button-prev',
+        },
+        pagination: { el: '.elementor-element-00c9276 .swiper-pagination', clickable: true },
+      });
+
+      new Swiper('.elementor-element-e0a2667 .swiper', {
+        slidesPerView: 1,
+        loop: true,
+        autoplay: { delay: 5000 },
+        navigation: {
+          nextEl: '.elementor-element-e0a2667 .elementor-swiper-button-next',
+          prevEl: '.elementor-element-e0a2667 .elementor-swiper-button-prev',
+        },
+        pagination: { el: '.elementor-element-e0a2667 .swiper-pagination', clickable: true },
+      });
     }
 
     if (document.readyState === 'loading') {
