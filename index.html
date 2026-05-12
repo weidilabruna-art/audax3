@@ -4552,51 +4552,61 @@
             </div>
           </div>
         </div>
-       <style>
-  .logo-container-floating {
-    position: relative;
-    width: 100%;
-    height: 550px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-  }
-  .logo-container-floating .logo-move {
-    width: 500px;
-    z-index: 5;
-  }
-  .logo-container-floating .elementor-element-b2a7d1c,
-  .logo-container-floating .elementor-element-06febcf,
-  .logo-container-floating .elementor-element-894f89a,
-  .logo-container-floating .elementor-element-2ad575d {
-    position: absolute !important;
-    width: 200px !important;
-  }
+        <style>
+          .logo-container-floating {
+            position: relative;
+            width: 100%;
+            height: 550px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+          }
+          .logo-container-floating .logo-move {
+            width: 500px;
+            z-index: 5;
+          }
+          .logo-container-floating .elementor-absolute {
+            position: absolute !important;
+            width: 380px !important;
+          }
+          /* Posições Desktop - Afastadas */
+          .logo-container-floating .elementor-element-06febcf { top: -5%; left: 0%; }
+          .logo-container-floating .elementor-element-2ad575d { top: 0%; right: 0%; }
+          .logo-container-floating .elementor-element-b2a7d1c { bottom: -5%; left: 0%; }
+          .logo-container-floating .elementor-element-894f89a { bottom: 0%; right: 0%; }
 
-  /* Esquerda */
-  .logo-container-floating .elementor-element-06febcf { top: 5%;    left: 18%; }
-  .logo-container-floating .elementor-element-b2a7d1c { bottom: 5%; left: 18%; }
+          /* Forçar barras pretas a serem finas em qualquer tela */
+          .elementor-element-fe0d4e9, .elementor-element-a22994e,
+          .elementor-element-fe0d4e9 .e-con-inner, .elementor-element-a22994e .e-con-inner {
+            min-height: 0 !important;
+            height: 50px !important;
+            padding: 0 !important;
+            margin: 0 !important;
+          }
+          .elementor-element-fe0d4e9 .elementor-widget-container,
+          .elementor-element-a22994e .elementor-widget-container {
+            padding: 0 !important;
+          }
+          .elementor-element-fe0d4e9 .elementor-heading-title, 
+          .elementor-element-a22994e .elementor-heading-title {
+            font-size: 14px !important;
+            line-height: 50px !important;
+            margin: 0 !important;
+            white-space: nowrap !important;
+          }
 
-  /* Direita — usando left calculado para garantir simetria */
-  .logo-container-floating .elementor-element-2ad575d { top: 5%;    left: calc(82% - 200px); }
-  .logo-container-floating .elementor-element-894f89a { bottom: 5%; left: calc(82% - 200px); }
-
-  @media (max-width: 767px) {
-    .logo-container-floating { height: 380px; }
-    .logo-container-floating .logo-move { width: 200px; }
-    .logo-container-floating .elementor-element-b2a7d1c,
-    .logo-container-floating .elementor-element-06febcf,
-    .logo-container-floating .elementor-element-894f89a,
-    .logo-container-floating .elementor-element-2ad575d {
-      width: 130px !important;
-    }
-    .logo-container-floating .elementor-element-06febcf { top: 5%;    left: 2%; }
-    .logo-container-floating .elementor-element-b2a7d1c { bottom: 5%; left: 2%; }
-    .logo-container-floating .elementor-element-2ad575d { top: 5%;    left: calc(98% - 130px); }
-    .logo-container-floating .elementor-element-894f89a { bottom: 5%; left: calc(98% - 130px); }
-  }
-</style>
+          @media (max-width: 767px) {
+            .logo-container-floating { height: 380px; margin: 0; }
+            .logo-container-floating .logo-move { width: 300px; }
+            .logo-container-floating .elementor-absolute { width: 180px !important; }
+            /* Posições Mobile - Empurradas para as bordas para não cobrir o logo */
+            .logo-container-floating .elementor-element-06febcf { top: 5%; left: -5%; }
+            .logo-container-floating .elementor-element-2ad575d { top: 15%; right: -5%; }
+            .logo-container-floating .elementor-element-b2a7d1c { bottom: 5%; left: -5%; }
+            .logo-container-floating .elementor-element-894f89a { bottom: 15%; right: -5%; }
+          }
+        </style>
         <div class="elementor-element elementor-element-9a72466 e-con-full e-flex e-con e-child" data-id="9a72466"
           data-element_type="container" data-e-type="container">
           <div class="elementor-element elementor-element-6d37815 e-con-full e-flex e-con e-child" data-id="6d37815"
